@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
       POSTGRES_DB: ${DB_NAME:-vibe_todo}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -20,8 +20,8 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: ../docker/backend.Dockerfile
+      context: .
+      dockerfile: ./docker/backend.Dockerfile
     container_name: vibe-backend
     environment:
       PORT: ${BACKEND_PORT:-8080}
@@ -36,8 +36,8 @@ services:
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: ../docker/frontend.Dockerfile
+      context: .
+      dockerfile: ./docker/frontend.Dockerfile
     container_name: vibe-frontend
     ports:
       - "${FRONTEND_PORT:-3000}:80"

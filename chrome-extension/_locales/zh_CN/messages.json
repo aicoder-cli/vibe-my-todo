@@ -1,0 +1,10 @@
+{
+  "app_name": {
+    "message": "Vibe My Todo - 待办事项",
+    "description": "应用名称"
+  },
+  "app_description": {
+    "message": "功能完整的待办事项管理插件，支持离线使用，数据同步",
+    "description": "应用描述"
+  }
+}
